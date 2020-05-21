@@ -1,4 +1,5 @@
 from queue import PriorityQueue
+import math
 
 def shortest_path(M,start,goal):
     my_map = M
@@ -6,7 +7,7 @@ def shortest_path(M,start,goal):
     def distance(a, b):
         (x1, y1) = my_map.intersections[a]
         (x2, y2) = my_map.intersections[b]
-        return (((x1 - x2)**2) + ((y1 - y2)**2))**0.5
+        return math.sqrt(((x1 - x2)**2) + ((y1 - y2)**2))
 
     frontier = PriorityQueue()
     frontier.put(start, 0)
